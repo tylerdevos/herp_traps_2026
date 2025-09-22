@@ -51,12 +51,12 @@ array_6_table <- table(array_6$species, array_6$trap_type)
 array_7_table <- table(array_7$species, array_7$trap_type)
 array_11_table <- table(array_11$species, array_11$trap_type)
 setwd("C:/Users/tbd/Desktop/")
-write.csv(array_1_table, "Three_Lakes_array_1_hybrid_results.csv", row.names=TRUE)
-write.csv(array_3_table, "Three_Lakes_array_3_hybrid_results.csv", row.names=TRUE)
-write.csv(array_4_table, "Three_Lakes_array_4_hybrid_results.csv", row.names=TRUE)
-write.csv(array_6_table, "Three_Lakes_array_6_hybrid_results.csv", row.names=TRUE)
-write.csv(array_7_table, "Three_Lakes_array_7_hybrid_results.csv", row.names=TRUE)
-write.csv(array_11_table, "Three_Lakes_array_11_hybrid_results.csv", row.names=TRUE)
+write.csv(array_1_table, "Three_Lakes_array_1_results.csv", row.names=TRUE)
+write.csv(array_3_table, "Three_Lakes_array_3_results.csv", row.names=TRUE)
+write.csv(array_4_table, "Three_Lakes_array_4_results.csv", row.names=TRUE)
+write.csv(array_6_table, "Three_Lakes_array_6_results.csv", row.names=TRUE)
+write.csv(array_7_table, "Three_Lakes_array_7_results.csv", row.names=TRUE)
+write.csv(array_11_table, "Three_Lakes_array_11_results.csv", row.names=TRUE)
 ```
 ###### Note: we repeated the above procedure with an alternate version of the dataset including camera data only from times when funnel traps were open.
 ### Part 2: Statistical test
