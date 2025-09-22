@@ -1,5 +1,5 @@
 ## Species detections by trap type
-### Part 1: Summary table
+### Part 1: General summary table
 Load data
 ```
 trap_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_trap_data.csv", fileEncoding="UTF-8-BOM")
