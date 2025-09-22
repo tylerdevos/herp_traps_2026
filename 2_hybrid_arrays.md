@@ -1,7 +1,6 @@
 ## Hybrid arrays
 ### Part 1: Hybrid array capture counts by species and trap type for individual arrays
 Load data
-###### Note: Here we use all camera data; for analyses including only camera data from dates when funnel traps were open, we used the same code but started with a manually reduced camera data input file.
 ```
 trap_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_trap_data.csv", fileEncoding="UTF-8-BOM")
 camera_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_camera_data.csv", fileEncoding="UTF-8-BOM")
@@ -59,9 +58,10 @@ write.csv(array_6_table, "Three_Lakes_array_6_hybrid_results.csv", row.names=TRU
 write.csv(array_7_table, "Three_Lakes_array_7_hybrid_results.csv", row.names=TRUE)
 write.csv(array_11_table, "Three_Lakes_array_11_hybrid_results.csv", row.names=TRUE)
 ```
+###### Note: we repeated the above procedure with an alternate version of the dataset including camera data only from times when funnel traps were open.
 ### Part 2: Statistical test
 Load data
-###### Note: input data are manually-created summaries of species detection totals for each trap type at each array, compiled using the results tables generated in part 1.
+###### Note: input data are manually-created summaries of species detection totals for each trap type at each array, compiled using the tables generated above.
 ```
 data <- read.csv("C:/Users/tbd22/OneDrive - Florida State University/Desktop/Research/Herp Capture Data/2025_season/data/hybrid_stats_all.csv", fileEncoding="UTF-8-BOM")
 ```
