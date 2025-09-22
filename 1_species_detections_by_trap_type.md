@@ -30,7 +30,7 @@ Load packages
 library(VennDiagram)
 ```
 Plot Venn diagram for Three Lakes reptiles
-###### Note: Circle and intersection sizes must be specified manually; these values can be determined using the table from part 1. We also manually added animal symbols to the base plots generated in R to better show the breakdown of species groups within each trap type.
+###### Note: Circle and intersection sizes must be specified manually; these values can be determined using the table from part 1.
 ```
 grid.newpage()
 TR <- draw.triple.venn(area1=21, area2=11, area3=23, 
@@ -40,8 +40,10 @@ TR <- draw.triple.venn(area1=21, area2=11, area3=23,
 setwd("C:/Users/tbd/Desktop/")
 ggsave(TR, filename="Three_Lakes_reptiles_venn_diagram.jpg", width=3.0, height=3.0, units="in")
 ```
+<img src="/Graphics/Three_Lakes_reptiles_raw_venn_diagram.jpg" alt="Three_Lakes_reptiles_raw_venn_diagram" width="400"/>
+
 Plot Venn diagram for Three Lakes amphibians
-###### Note: Circle and intersection sizes must be specified manually; these values can be determined using the table from part 1. We also manually added animal symbols to the base plots generated in R to better show the breakdown of species groups within each trap type.
+###### Note: Circle and intersection sizes must be specified manually; these values can be determined using the table from part 1.
 ```
 grid.newpage()
 TA <- draw.triple.venn(area1=6, area2=9, area3=11, 
@@ -51,3 +53,7 @@ TA <- draw.triple.venn(area1=6, area2=9, area3=11,
 setwd("C:/Users/tbd/Desktop/")
 ggsave(TA, filename="Three_Lakes_amphibians_venn_diagram.jpg", width=3.0, height=3.0, units="in")
 ```
+<img src="/Graphics/Three_Lakes_amphibians_raw_venn_diagram.jpg" alt="Three_Lakes_amphibians_raw_venn_diagram" width="400"/>
+
+###### Note: We manually added animal symbols to the base plots generated in R to show the breakdown of species groups within each trap type; Venn diagrams from both sites were then combined to create the final figure:
+<img src="/Graphics/Figure_2.jpg" alt="Figure_2" width="800"/>
