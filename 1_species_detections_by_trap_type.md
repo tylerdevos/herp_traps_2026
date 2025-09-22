@@ -1,6 +1,6 @@
 ## Species detections by trap type
 ### Part 1: General summary table
-Load data
+Load data (see example data: [Three_Lakes_trap_data](https://github.com/tylerdevos/herp_traps_2026/Data/Three_Lakes_trap_data.csv), [Three_Lakes_camera_data](https://github.com/tylerdevos/herp_traps_2026/Data/Three_Lakes_camera_data.csv))
 ```
 trap_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_trap_data.csv", fileEncoding="UTF-8-BOM")
 camera_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_camera_data.csv", fileEncoding="UTF-8-BOM")
