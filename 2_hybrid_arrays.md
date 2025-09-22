@@ -63,7 +63,7 @@ write.csv(array_11_table, "Three_Lakes_array_11_hybrid_results.csv", row.names=T
 Load data
 ###### Note: input data are manually-created summaries of species detection totals for each trap type at each array, compiled using the tables generated above.
 ```
-data <- read.csv("C:/Users/tbd22/OneDrive - Florida State University/Desktop/Research/Herp Capture Data/2025_season/data/hybrid_stats_all.csv", fileEncoding="UTF-8-BOM")
+data <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/hybrid_stats_all.csv", fileEncoding="UTF-8-BOM")
 ```
 Subset data by trap type
 ```
@@ -74,4 +74,4 @@ Wilcoxon signed rank test (difference between species counts at hybrid array fun
 ```
 wilcox.test(camera, funnels, paired=TRUE, alternative="two.sided", exact=FALSE)
 ```
-###### Note: we repeated the above procedure for individual species groups (e.g., snake data only, frog data only, etc.) and for an alternate version of the dataset including camera data only from times when funnel traps were open.
+###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.) and for an alternate version of the dataset including camera data only from times when funnel traps were open.
