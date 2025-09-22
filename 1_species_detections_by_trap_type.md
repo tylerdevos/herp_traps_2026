@@ -4,7 +4,6 @@ Load data
 ```
 trap_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_trap_data.csv", fileEncoding="UTF-8-BOM")
 camera_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_camera_data.csv", fileEncoding="UTF-8-BOM")
-array_info <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_array_info.csv", fileEncoding="UTF-8-BOM")
 ```
 Expand condensed species data using the count column
 ```
