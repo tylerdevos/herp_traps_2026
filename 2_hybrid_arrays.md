@@ -1,53 +1,77 @@
 ## Hybrid arrays
-### Part 1: Hybrid array counts by trap type for individual arrays
-#load data
-trap_data_raw <- read.csv("C:/Users/tbd22/OneDrive - Florida State University/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_trap_data.csv", fileEncoding="UTF-8-BOM")
-camera_data_raw <- read.csv("C:/Users/tbd22/OneDrive - Florida State University/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_camera_data.csv", fileEncoding="UTF-8-BOM")
-array_info <- read.csv("C:/Users/tbd22/OneDrive - Florida State University/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_array_info.csv", fileEncoding="UTF-8-BOM")
-
-#expand condensed species data using the count column
+### Part 1: Hybrid array capture counts by species and trap type for individual arrays
+Load data
+###### Note: Here we use all camera data; for analyses including only camera data from dates when funnel traps were open, we used the same code but started with a manually reduced camera data input file.
+```
+trap_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_trap_data.csv", fileEncoding="UTF-8-BOM")
+camera_data_raw <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_camera_data.csv", fileEncoding="UTF-8-BOM")
+array_info <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/Three_Lakes_array_info.csv", fileEncoding="UTF-8-BOM")
+```
+Expand condensed species data using the count column
+```
 trap_data <- trap_data_raw[rep(row.names(trap_data_raw), trap_data_raw$count_in_trap), 1:6]
 camera_data <- camera_data_raw[rep(row.names(camera_data_raw), camera_data_raw$count), 1:9]
-
-#join array type data to trap and camera data
+```
+Join array type data to trap and camera data
+```
 trap_array_data <- merge(trap_data, array_info, by='array_ID')
 camera_array_data <- merge(camera_data, array_info, by='array_ID')
-
-#subset hybrid array data
+```
+Extract data from hybrid arrays only
+```
 hybrid_trap_data <- subset(trap_array_data, array_type=='hybrid')
 hybrid_camera_data <- subset(camera_array_data, array_type=='hybrid')
-
-#merge hybrid trap array and hybrid camera data
+```
+Merge hybrid trap and hybrid camera data
+```
 hybrid_camera_data$trap_type <- NA
 hybrid_camera_data$trap_type[is.na(hybrid_camera_data$trap_type)] <- "camera"
 hybrid_camera_merge <- hybrid_camera_data[c("species","trap_type","array_ID")]
 hybrid_trap_merge <- hybrid_trap_data[c("species","trap_type","array_ID")]
 hybrid_trap_and_camera <- rbind(hybrid_trap_merge, hybrid_camera_merge)
-
-#get list of hybrid array IDs
+```
+Print a list of hybrid array IDs
+```
 sort(unique(hybrid_trap_and_camera$array_ID))
-
-#subset data by array ID
+```
+Subset data by array ID
+```
 array_1 <- subset(hybrid_trap_and_camera, array_ID=='Array 1')
-array_2 <- subset(hybrid_trap_and_camera, array_ID=='Array 2')
-array_5 <- subset(hybrid_trap_and_camera, array_ID=='Array 5')
+array_3 <- subset(hybrid_trap_and_camera, array_ID=='Array 3')
+array_4 <- subset(hybrid_trap_and_camera, array_ID=='Array 4')
 array_6 <- subset(hybrid_trap_and_camera, array_ID=='Array 6')
-array_8 <- subset(hybrid_trap_and_camera, array_ID=='Array 8')
+array_7 <- subset(hybrid_trap_and_camera, array_ID=='Array 7')
 array_11 <- subset(hybrid_trap_and_camera, array_ID=='Array 11')
-
-#create and export tables of species counts by trap type for each array
+```
+Create and export tables of species counts by trap type for each array
+```
 array_1_table <- table(array_1$species, array_1$trap_type)
-array_2_table <- table(array_2$species, array_2$trap_type)
-array_5_table <- table(array_5$species, array_5$trap_type)
+array_3_table <- table(array_3$species, array_3$trap_type)
+array_4_table <- table(array_4$species, array_4$trap_type)
 array_6_table <- table(array_6$species, array_6$trap_type)
-array_8_table <- table(array_8$species, array_8$trap_type)
+array_7_table <- table(array_7$species, array_7$trap_type)
 array_11_table <- table(array_11$species, array_11$trap_type)
-setwd("C:/Users/tbd22/OneDrive - Florida State University/Desktop/")
-write.csv(array_1_table, "Three_Lakes_array_1_results.csv", row.names=TRUE)
-write.csv(array_2_table, "Three_Lakes_array_2_results.csv", row.names=TRUE)
-write.csv(array_5_table, "Three_Lakes_array_5_results.csv", row.names=TRUE)
-write.csv(array_6_table, "Three_Lakes_array_6_results.csv", row.names=TRUE)
-write.csv(array_8_table, "Three_Lakes_array_8_results.csv", row.names=TRUE)
-write.csv(array_11_table, "Three_Lakes_array_11_results.csv", row.names=TRUE)
-
-
+setwd("C:/Users/tbd/Desktop/")
+write.csv(array_1_table, "Three_Lakes_array_1_hybrid_results.csv", row.names=TRUE)
+write.csv(array_3_table, "Three_Lakes_array_3_hybrid_results.csv", row.names=TRUE)
+write.csv(array_4_table, "Three_Lakes_array_4_hybrid_results.csv", row.names=TRUE)
+write.csv(array_6_table, "Three_Lakes_array_6_hybrid_results.csv", row.names=TRUE)
+write.csv(array_7_table, "Three_Lakes_array_7_hybrid_results.csv", row.names=TRUE)
+write.csv(array_11_table, "Three_Lakes_array_11_hybrid_results.csv", row.names=TRUE)
+```
+### Part 2: Statistical test
+Load data
+###### Note: input data are manually-created summaries of species detection totals for each trap type at each array, compiled using the results tables generated in part 1.
+```
+data <- read.csv("C:/Users/tbd22/OneDrive - Florida State University/Desktop/Research/Herp Capture Data/2025_season/data/hybrid_stats_all.csv", fileEncoding="UTF-8-BOM")
+```
+Subset data by trap type
+```
+funnels <- data$funnels
+camera <- data$camera
+```
+Wilcoxon signed rank test (difference between species counts at hybrid array funnels vs. cameras)
+```
+wilcox.test(camera, funnels, paired=TRUE, alternative="two.sided", exact=FALSE)
+```
+###### Note: we repeated the above procedure for individual species groups (e.g., snake data only, frog data only, etc.) and for an alternate version of the dataset including camera data only from times when funnel traps were open.
