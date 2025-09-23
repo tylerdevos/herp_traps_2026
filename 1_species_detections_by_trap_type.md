@@ -24,7 +24,7 @@ species_trap_table <- table(trap_and_camera$species, trap_and_camera$trap_type)
 setwd("C:/Users/tbd/Desktop")
 write.csv(species_trap_table, "Three_Lakes_species_counts_by_trap_type.csv", row.names=TRUE)
 ```
-###### Note: we repeated the above steps for each relevant survey site; here and throughout the repository we use data from Three Lakes WMA as an example.
+###### Note: we repeated the above procedure for each relevant survey site; here and throughout the repository we use data from Three Lakes WMA as an example.
 ### Part 2: Venn diagrams
 Load packages
 ```
