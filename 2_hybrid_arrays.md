@@ -58,7 +58,7 @@ write.csv(array_6_table, "Three_Lakes_array_6_results.csv", row.names=TRUE)
 write.csv(array_7_table, "Three_Lakes_array_7_results.csv", row.names=TRUE)
 write.csv(array_11_table, "Three_Lakes_array_11_results.csv", row.names=TRUE)
 ```
-###### Note: we repeated the above procedure with an alternate version of the dataset including camera data only from times when funnel traps were open.
+###### Note: we repeated the above procedure for each relevant survey site, and with an alternate version of the dataset including camera data only from times when funnel traps were open. Here and throughout the repository we use data from Three Lakes WMA as an example.
 ### Part 2: Statistical test
 Load packages
 ```
@@ -79,3 +79,8 @@ Wilcoxon signed rank test (difference between species counts at hybrid array fun
 wilcox.test(camera, funnels, paired=TRUE, alternative="two.sided", exact=FALSE)
 ```
 ###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.) and for an alternate version of the dataset including camera data only from times when funnel traps were open.
+
+
+
+
+### [<<< Back to page 1: species detections by trap type](https://github.com/tylerdevos/herp_traps_2026/blob/main/1_species_detections_by_trap_type.md)                    [To page 3: hybrid vs. traditional arrays >>>](https://github.com/tylerdevos/herp_traps_2026/blob/main/3_hybrid_vs_traditional_arrays.md)
