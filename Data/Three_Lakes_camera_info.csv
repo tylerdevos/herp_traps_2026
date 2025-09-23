@@ -1,0 +1,24 @@
+camera_ID,array_ID,camera_position,specific_position,multiple_cameras
+H13,Array 1,center,center_only,no
+H15,Array 11,center,center_only,no
+H1,Array 12,center,center,yes
+H25,Array 12,arm,arm_east,yes
+H26,Array 12,arm,arm_south,yes
+H27,Array 12,arm,arm_west,yes
+H28,Array 12,arm,arm_north,yes
+H10,Array 13,arm,arm_east,yes
+H18,Array 13,center,center,yes
+H5,Array 13,arm,arm_north,yes
+H7,Array 13,arm,arm_west,yes
+H11,Array 14,arm,arm_south,yes
+H12,Array 14,arm,arm_north,yes
+H14,Array 14,arm,arm_west,yes
+H2,Array 14,center,center,yes
+H17,Array 15,arm,arm_north,yes
+H3,Array 15,arm,arm_south,yes
+H4,Array 15,arm,arm_west,yes
+H8,Array 15,center,center,yes
+H16,Array 3,center,center_only,no
+H6,Array 4,center,center_only,no
+H9,Array 6,center,center_only,no
+H19,Array 7,center,center_only,no
