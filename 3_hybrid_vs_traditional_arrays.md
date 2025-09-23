@@ -44,4 +44,46 @@ write.csv(array_9_table, "Three_Lakes_array_9_results.csv", row.names=TRUE)
 write.csv(array_10_table, "Three_Lakes_array_10_results.csv", row.names=TRUE)
 ```
 ### Part 2: Statistical tests
-TO BE CONTINUED
+Load packages
+```
+library(car)
+```
+Load data (see example data: [hybrid_camera_stats](https://github.com/tylerdevos/herp_traps_2026/blob/main/Data/hybrid_camera_stats.csv), [box_stats](https://github.com/tylerdevos/herp_traps_2026/blob/main/Data/box_stats.csv), [camera_v_box_stats](https://github.com/tylerdevos/herp_traps_2026/blob/main/Data/camera_v_box_stats.csv))
+###### Note: input data are manually-created summaries of species detection totals for each trap type at each array, compiled using the tables generated above and in part 1 on page 2 (hybrid arrays).
+```
+data_hybrid_camera <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/hybrid_camera_stats.csv", fileEncoding="UTF-8-BOM")
+data_traditional_box <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/box_stats.csv", fileEncoding="UTF-8-BOM")
+data_both <- read.csv("C:/Users/tbd/Desktop/Research/Herp Capture Data/2025_season/data/camera_v_box_stats.csv", fileEncoding="UTF-8-BOM")
+```
+Subset hybrid array data by trap type
+```
+funnels_only <- data_hybrid_camera$funnels_only
+funnels_and_camera <- data_hybrid_camera$funnels_and_camera
+```
+Wilcoxon signed rank test (difference between species counts at hybrid array funnels vs. funnels and camera combined)
+```
+wilcox.test(funnels_and_camera, funnels_only, paired=TRUE, alternative="greater", exact=FALSE)
+```
+Subset traditional array data by trap type
+```
+funnels_only_2 <- data_traditional_box$funnels_only
+funnels_and_box <- data_traditional_box$funnels_and_box
+```
+Wilcoxon signed rank test (difference between species counts at traditional array funnels vs. funnels and box trap combined)
+```
+wilcox.test(funnels_and_box, funnels_only_2, paired=TRUE, alternative="greater", exact=FALSE)
+```
+Subset data by trap type
+```
+camera <-subset(data, trap_type=="camera")
+box <-subset(data, trap_type=="box")
+```
+Mann-Whitney U-test (difference between percentage increase in species detection counts resulting from cameras vs. box traps)
+```
+wilcox.test(camera$perc_increase, box$perc_increase, alternative="two.sided", exact=FALSE)
+```
+
+
+
+
+
