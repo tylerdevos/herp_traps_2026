@@ -60,6 +60,10 @@ write.csv(array_11_table, "Three_Lakes_array_11_results.csv", row.names=TRUE)
 ```
 ###### Note: we repeated the above procedure with an alternate version of the dataset including camera data only from times when funnel traps were open.
 ### Part 2: Statistical test
+Load packages
+```
+library(car)
+```
 Load data (see example data: [hybrid_stats](https://github.com/tylerdevos/herp_traps_2026/blob/main/Data/hybrid_stats.csv))
 ###### Note: input data are manually-created summaries of species detection totals for each trap type at each array, compiled using the tables generated above.
 ```
