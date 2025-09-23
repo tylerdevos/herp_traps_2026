@@ -43,6 +43,7 @@ write.csv(array_8_table, "Three_Lakes_array_8_results.csv", row.names=TRUE)
 write.csv(array_9_table, "Three_Lakes_array_9_results.csv", row.names=TRUE)
 write.csv(array_10_table, "Three_Lakes_array_10_results.csv", row.names=TRUE)
 ```
+###### Note: we repeated the above procedure for each relevant survey site; here and throughout the repository we use data from Three Lakes WMA as an example.
 ### Part 2: Statistical tests
 Load packages
 ```
@@ -83,3 +84,8 @@ Mann-Whitney U-test (difference between percentage increase in species detection
 wilcox.test(camera$perc_increase, box$perc_increase, alternative="two.sided", exact=FALSE)
 ```
 ###### Note: we repeated the above tests for individual species groups (e.g., snake data only, frog data only, etc.).
+
+
+
+
+### [<<< Back to page 2: hybrid arrays](https://github.com/tylerdevos/herp_traps_2026/blob/main/2_hybrid_arrays.md)                    [To page 4: camera arrays >>>](https://github.com/tylerdevos/herp_traps_2026/blob/main/4_camera_arrays.md)
