@@ -82,8 +82,4 @@ Mann-Whitney U-test (difference between percentage increase in species detection
 ```
 wilcox.test(camera$perc_increase, box$perc_increase, alternative="two.sided", exact=FALSE)
 ```
-
-
-
-
-
+###### Note: we repeated the above tests for individual species groups (e.g., snake data only, frog data only, etc.).
