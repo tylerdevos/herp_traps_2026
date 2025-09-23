@@ -40,6 +40,7 @@ write.csv(array_13_table, "Three_Lakes_array_13_results.csv", row.names=TRUE)
 write.csv(array_14_table, "Three_Lakes_array_14_results.csv", row.names=TRUE)
 write.csv(array_15_table, "Three_Lakes_array_15_results.csv", row.names=TRUE)
 ```
+### Note: we repeated the above procedure for each relevant survey site; here and throughout the repository we use data from Three Lakes WMA as an example.
 ### Part 2: Statistical test
 Load packages
 ```
@@ -60,3 +61,8 @@ Wilcoxon signed rank test (difference between species counts at camera array arm
 wilcox.test(arms, centers, paired=TRUE, alternative="two.sided", exact=FALSE)
 ```
 ###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.).
+
+
+
+
+### [<<< Back to page 3: hybrid vs traditional arrays](https://github.com/tylerdevos/herp_traps_2026/blob/main/3_hybrid_vs_traditional_arrays.md)
