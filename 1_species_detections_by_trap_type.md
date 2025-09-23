@@ -24,6 +24,7 @@ species_trap_table <- table(trap_and_camera$species, trap_and_camera$trap_type)
 setwd("C:/Users/tbd/Desktop")
 write.csv(species_trap_table, "Three_Lakes_species_counts_by_trap_type.csv", row.names=TRUE)
 ```
+###### Note: we repeated the above steps for each relevant survey site
 ### Part 2: Venn diagrams
 Load packages
 ```
@@ -57,3 +58,7 @@ ggsave(TA, filename="Three_Lakes_amphibians_venn_diagram.jpg", width=3.0, height
 
 ###### Note: we manually added animal symbols to the base plots generated in R to show the breakdown of species groups within each trap type; Venn diagrams from both sites were then combined to create the final figure:
 <img src="/Graphics/Figure_2.jpg" alt="Figure_2" width="800"/>
+
+
+
+### [To page 2: hybrid arrays >>>](https://github.com/tylerdevos/herp_traps_2026/blob/main/2_hybrid_arrays.md)
