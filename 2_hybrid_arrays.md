@@ -78,8 +78,12 @@ Wilcoxon signed rank test (difference between species counts at hybrid array fun
 ```
 wilcox.test(camera, funnels, paired=TRUE, alternative="two.sided", exact=FALSE)
 ```
-###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.) and for an alternate version of the dataset including camera data only from times when funnel traps were open.
-
+###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.) and for an alternate version of the dataset including camera data only from times when funnel traps were open. Following completion of this group of tests, we controlled for false discovery rate using the Benjamini-Hochberg procedure (implemented as shown below) for 10 comparisons and an original alpha level of 0.05.
+```
+p_values <- c(0.008587, 0.00377, 0.01922, 0.08496, 0.0726, 0.003805, 0.003753, 0.005448, 0.005793, 0.7728)
+p_adj <- p.adjust(p_values, method="BH")
+p_adj
+```
 
 
 
