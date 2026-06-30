@@ -83,7 +83,12 @@ Mann-Whitney U-test (difference between percentage increase in species detection
 ```
 wilcox.test(camera$perc_increase, box$perc_increase, alternative="two.sided", exact=FALSE)
 ```
-###### Note: we repeated the above tests for individual species groups (e.g., snake data only, frog data only, etc.).
+###### Note: we repeated the above tests for individual species groups (e.g., snake data only, frog data only, etc.). Following completion of this group of tests, we controlled for false discovery rate using the Benjamini-Hochberg procedure (implemented as shown below) for 14 comparisons and an original alpha level of 0.05.
+```
+p_values <- c(0.01065, 0.01313, 0.07446, 0.02838, 1.0, 0.004394, 0.1729, 0.03593, 0.006607, 0.009828, 0.967, 0.04752, 0.633, 0.7688)
+p_adj <- p.adjust(p_values, method="BH")
+p_adj
+```
 
 
 
