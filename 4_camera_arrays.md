@@ -60,8 +60,12 @@ Wilcoxon signed rank test (difference between species counts at camera array arm
 ```
 wilcox.test(arms, centers, paired=TRUE, alternative="two.sided", exact=FALSE)
 ```
-###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.).
-
+###### Note: we repeated this test for individual species groups (e.g., snake data only, frog data only, etc.). Following completion of this group of tests, we controlled for false discovery rate using the Benjamini-Hochberg procedure (implemented as shown below) for 10 comparisons and an original alpha level of 0.05.
+```
+p_values <- c(0.007466, 0.5393, 0.004157, 0.01704, 0.233, 0.05425, 0.0045, 0.7273, 0.5886, 0.3482)
+p_adj <- p.adjust(p_values, method="BH")
+p_adj
+```
 
 
 
