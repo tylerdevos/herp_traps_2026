@@ -57,7 +57,7 @@ ggsave(TA, filename="Three_Lakes_amphibians_venn_diagram.jpg", width=3.0, height
 <img src="/Graphics/Three_Lakes_amphibians_raw_venn_diagram.jpg" alt="Three_Lakes_amphibians_raw_venn_diagram" width="400"/>
 
 ###### Note: we manually added animal symbols to the base plots generated in R to show the breakdown of species groups within each trap type; Venn diagrams from both sites were then combined to create the final figure:
-<img src="/Graphics/Figure_2.jpg" alt="Figure_2" width="800"/>
+<img src="/Graphics/Figure_3.jpg" alt="Figure_3" width="800"/>
 
 
 
